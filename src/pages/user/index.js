@@ -19,7 +19,7 @@ class User extends Component {
 
   goPage = e => {
     if (
-      e.currentTarget.dataset.url == '/pages/login/index' &&
+      e.currentTarget.dataset.url == '/pages/home/index' &&
       this.props.access_token
     ) {
       return;
@@ -32,7 +32,7 @@ class User extends Component {
   goToPage = e => {
     if (!this.props.access_token) {
       Taro.navigateTo({
-        url: '/pages/login/index',
+        url: '/pages/home/index',
       });
       return;
     }
@@ -45,7 +45,7 @@ class User extends Component {
     e.stopPropagation();
     if (!this.props.access_token) {
       Taro.navigateTo({
-        url: '/pages/login/index',
+        url: '/pages/home/index',
       });
       return;
     }
@@ -93,7 +93,7 @@ class User extends Component {
         <View className="not-login">
           <View
             className="to-login"
-            data-url="/pages/login/index"
+            data-url="/pages/home/index"
             onClick={this.goPage}
           >
             <View className="left">
@@ -146,7 +146,7 @@ class User extends Component {
                 {!mobile && (
                   <View
                     className="btn"
-                    data-url="/pages/login/index"
+                    data-url="/pages/home/index"
                     onClick={this.goPage}
                   >
                     成为会员
@@ -186,7 +186,7 @@ class User extends Component {
           </View>
           <View
             className="item"
-            data-url="/pages/about/index"
+            data-url="/pages/home/index"
             onClick={this.goPage}
           >
             <View className="left">

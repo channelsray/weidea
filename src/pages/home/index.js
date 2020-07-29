@@ -16,12 +16,6 @@ class Index extends Component {
   };
 
   componentDidMount = () => {
-    this.props.dispatch({
-      type: 'home/load',
-    });
-    this.props.dispatch({
-      type: 'home/product',
-    });
 
     // 设置衣袋小红点
     if (this.props.items.length > 0) {
@@ -46,15 +40,7 @@ class Index extends Component {
 
   // 小程序上拉加载
   onReachBottom() {
-    this.props.dispatch({
-      type: 'home/save',
-      payload: {
-        page: this.props.page + 1,
-      },
-    });
-    this.props.dispatch({
-      type: 'home/product',
-    });
+    
   }
 
   render() {
