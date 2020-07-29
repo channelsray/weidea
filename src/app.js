@@ -30,19 +30,19 @@ class App extends Component {
       list: [
         {
           pagePath: 'pages/home/index',
-          text: '首页',
+          text: '我要',
           iconPath: './images/tab/home.png',
           selectedIconPath: './images/tab/home-active.png',
         },
         {
           pagePath: 'pages/cart/index',
-          text: '衣袋',
+          text: '+',
           iconPath: './images/tab/cart.png',
           selectedIconPath: './images/tab/cart-active.png',
         },
         {
           pagePath: 'pages/user/index',
-          text: '我的',
+          text: '我有',
           iconPath: './images/tab/user.png',
           selectedIconPath: './images/tab/user-active.png',
         },

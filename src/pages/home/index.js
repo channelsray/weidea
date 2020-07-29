@@ -1,14 +1,11 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Text, Image } from '@tarojs/components';
+import { View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
-import MySwiper from '../../components/MySwiper';
-import GoodsList from '../../components/GoodsList';
 import './index.scss';
 
-@connect(({ home, cart, loading }) => ({
+@connect(({ home, cart }) => ({
   ...home,
-  ...cart,
-  ...loading,
+  ...cart
 }))
 class Index extends Component {
   config = {
@@ -16,51 +13,12 @@ class Index extends Component {
   };
 
   componentDidMount = () => {
-
-    // 设置衣袋小红点
-    if (this.props.items.length > 0) {
-      Taro.setTabBarBadge({
-        index: 1,
-        text: String(this.props.items.length),
-      });
-    } else {
-      Taro.removeTabBarBadge({
-        index: 1,
-      });
-    }
   };
 
-  //分享
-  onShareAppMessage() {
-    return {
-      title: '基于Taro框架开发的时装衣橱',
-      path: '/pages/home/index',
-    };
-  }
-
-  // 小程序上拉加载
-  onReachBottom() {
-    
-  }
-
   render() {
-    const { banner, brands, products_list, effects } = this.props;
     return (
       <View className="home-page">
-        <MySwiper banner={banner} home />
-        <View className="nav-list">
-          {brands.map((item, index) => (
-            <View className="nav-item" key={index}>
-              <Image mode="widthFix" src={item.image_src} />
-            </View>
-          ))}
-        </View>
-        {/* 流量主广告 */}
-        {Taro.getEnv() === Taro.ENV_TYPE.WEAPP && (
-          <ad unit-id="adunit-dc1c0a38156fa412" />
-        )}
-        <Text className="recommend">为你推荐</Text>
-        <GoodsList list={products_list} loading={effects['home/product']} />
+        首页写这里
       </View>
     );
   }
